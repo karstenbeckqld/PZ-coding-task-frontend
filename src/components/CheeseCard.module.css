@@ -1,0 +1,32 @@
+.listElement {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2px;
+}
+
+.btn{
+    left: 98%;
+    top: 2%;
+    transform: translate(-100%, 0);
+}
+
+.descriptionHeader{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #171d25;
+}
