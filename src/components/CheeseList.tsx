@@ -2,6 +2,9 @@ import useCheeses from "../hooks/useCheeses.ts";
 import { SimpleGrid } from "@chakra-ui/react";
 import CheeseCard from "./CheeseCard.tsx";
 
+// The CheeseList component is responsible for rendering a list of CheeseCard components, which display information about
+// each cheese. It uses the useCheeses hook to fetch the list of cheeses from the API and handles potential errors.
+
 const CheeseList = () => {
 
     const {cheeses, error} = useCheeses();

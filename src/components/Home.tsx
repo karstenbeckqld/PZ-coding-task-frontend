@@ -3,6 +3,9 @@ import NavBar from "./NavBar.tsx";
 import CheeseList from "./CheeseList.tsx";
 import Footer from "./Footer.tsx";
 
+// Similar to the AddCheese component, the Home component provides a layout for the CheeseList component, so that the list of
+// cheeses can be displayed to the user.
+
 const Home = () => {
     return (
         <div>

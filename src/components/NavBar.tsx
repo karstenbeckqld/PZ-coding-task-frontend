@@ -3,6 +3,8 @@ import logo from '/src/assets/react.svg';
 import ColorModeSwitch from "./ColorModeSwitch.tsx";
 import { Link } from "react-router-dom";
 
+// The NavBar component is a simple component that displays the navigation bar at the top of the page. It contains links
+// to the Home and Add Cheese pages, as well as a color mode switch.
 
 const NavBar = () => {
 

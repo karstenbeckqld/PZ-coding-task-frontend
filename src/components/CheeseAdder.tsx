@@ -5,6 +5,7 @@ import axios from "axios";
 
 const CheeseAdder = () => {
 
+        // First, we declare all required useRef states to read the fields from the form.
         const nameRef = useRef<HTMLInputElement>(null);
         const imageRef = useRef<HTMLInputElement>(null);
         const colourRef = useRef<HTMLInputElement>(null);
@@ -14,8 +15,10 @@ const CheeseAdder = () => {
         const [newTag, setNewTag] = useState<string>('');
         const [tagList, setTagList] = useState<string[]>([]);
 
+        // Again, we use the useColorMode hook to determine the color mode of the application.
         const {colorMode} = useColorMode();
 
+        // We declare a cheese object to store the data from the form. The cheese object has the following fields:
         const cheese: {
             Name: string;
             Image: string;
@@ -32,6 +35,10 @@ const CheeseAdder = () => {
             Description: ''
         };
 
+        // The handleSubmit function is called when the user submits the form. It prevents the default form submission,
+        // so that the page does not reload. It then reads the values from the form fields and stores them in the cheese
+        // object. The cheese object is then sent to the API using axios. The image file is uploaded to the server using
+        // a FormData object in a separate step as it uses a different endpoint.
         const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
             event.preventDefault();
 

@@ -4,6 +4,10 @@ import styles from './CheeseCard.module.css';
 import { ImSpoonKnife } from "react-icons/im";
 import Calculator from "./Calculator.tsx";
 
+// The CheeseCard component is a component that receives the data from one cheese and displays it on the screen. It uses
+// the Cheese type to define the data structure of the cheese object. The component displays the cheese name, price, color,
+// image, tags, and description. It also includes a calculator component to calculate the price based on the weight entered.
+
 interface Props {
     cheese: Cheese;
 }

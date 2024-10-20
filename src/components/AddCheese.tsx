@@ -3,6 +3,8 @@ import NavBar from "./NavBar.tsx";
 import CheeseAdder from "./CheeseAdder.tsx";
 import Footer from "./Footer.tsx";
 
+// The AddCheese component provides a layout for the CheeseAdder component, so that a new cheese can be added to the
+// list of cheeses.
 const AddCheese = () => {
     return (
         <div>
