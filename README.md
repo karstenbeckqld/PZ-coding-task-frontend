@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Project for PZ coding task
+The cheese application consists of a .NET web API and React front end. The data for the cheeses is stored in a MongoDB 
+and the cheese images on the API server in the public/images folder.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React is used with Typescript and most of the components are commented so that you can see how they work.
 
-Currently, two official plugins are available:
+The application is located in two GitHub repositories:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Backend (API): https://github.com/karstenbeckqld/PZ-coding-task-backend
 
-## Expanding the ESLint configuration
+Frontend (React): https://github.com/karstenbeckqld/PZ-coding-task-frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Both parts can be run locally. 
+The React frontend needs to first run npm install to install all the dependencies and then npm run dev to start the 
+development server.
 
-- Configure the top-level `parserOptions` property like this:
+The backend can be run in Visual Studio or from the command line using dotnet run.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+The application uses Chakra-UI, Bootstrap and custom CSS for styling.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+What would have been done differently if I had more time:
+- Add a search function to search for cheeses by name
+- Add a filter function to filter cheeses by type/origin/colour...
+- Implement the edit functionality depicted in the application design
+- Implement the delete functionality available in the API
+- Add a loading spinner while the data is being fetched
+- Focus on one UI library (currently Chakra-Ui and Bootstrap, plus custom CSS) and make the design more consistent
+- Add more tests
+- Use as different approach for the Tags, as the current one is not very user-friendly and difficult to handle in the form
+- Maybe use SQL instead of MongoDB
+- Optimise Dockerfile for better performance
