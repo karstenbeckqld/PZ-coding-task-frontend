@@ -26,7 +26,7 @@ What would have been done differently if I had more time:
 - Implement the edit functionality depicted in the application design
 - Implement the delete functionality available in the API
 - Add a loading spinner while the data is being fetched
-- Focus on one UI library (currently Chakra-Ui and Bootstrap, plus custom CSS) and make the design more consistent
+- Focus on one UI library (currently Chakra-Ui, TailwindCSS and Bootstrap, plus custom CSS) and make the design more consistent
 - Add more tests
 - Use as different approach for the Tags, as the current one is not very user-friendly and difficult to handle in the form
 - Maybe use SQL instead of MongoDB
