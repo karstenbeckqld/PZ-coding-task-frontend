@@ -10,6 +10,8 @@ Backend (API): https://github.com/karstenbeckqld/PZ-coding-task-backend
 
 Frontend (React): https://github.com/karstenbeckqld/PZ-coding-task-frontend
 
+The database content is in Database.json in the backend repository. 
+
 Both parts can be run locally. 
 The React frontend needs to first run npm install to install all the dependencies and then npm run dev to start the 
 development server.
