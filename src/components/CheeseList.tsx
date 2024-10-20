@@ -8,7 +8,8 @@ const CheeseList = () => {
 
     return (
         <div>
-            {error && <div>{error}</div>} <SimpleGrid
+            {error && <div>{error}</div>}
+            <SimpleGrid
             columns={{
                 sm: 1,
                 md: 2,
@@ -30,3 +31,6 @@ export default CheeseList;
 // Edam: Image by freepik
 // Gruillere: Image by jcomp on Freepik
 // Cheddar: Image by freepik
+// Brie: https://www.gettyimages.com.au/detail/photo/brie-cheese-royalty-free-image/640177074?adppopup=true
+// Goat on a Hot Rin Roof: https://upload.wikimedia.org/wikipedia/commons/9/94/Ziegenkaese_Rolle_II.jpg
+// Cottage Cheese: https://media.gettyimages.com/id/1202525766/photo/tvorog-cottage-cheese-or-curd-cheese.jpg?s=612x612&w=0&k=20&c=1izrAik4WXaMRPMz697BILvrOJrfsFMC0NlgJJimnK4=

@@ -28,7 +28,7 @@ const Calculator = ({cheeseData}: CalculatorProps) => {
 
     return (
         <div className='flex flex-col flex-wrap mb-3'>
-            <Text color={colorMode === 'dark' ? 'white' : 'black'}>Calculate your cost</Text>
+            <Text color={colorMode === 'dark' ? 'white' : 'black'}>Calculate price for your chosen weight</Text>
             <form className='flex flex-row flex-nowrap gap-3.5' onSubmit={calculatePrice}>
                 <div className="input-group">
                     <span className="input-group-text">Weight (kg)</span>

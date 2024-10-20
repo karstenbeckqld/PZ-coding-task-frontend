@@ -18,9 +18,13 @@
     color: #41804d;
 }
 
+.cheese-form{
+    position: relative;
+}
+
 .sbmt-btn{
     position: absolute;
-    right: 20px;
+    right: 0;
     width: 150px;
     margin-bottom: 50px;
 }

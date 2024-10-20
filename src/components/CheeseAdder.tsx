@@ -3,10 +3,6 @@ import React, { useRef, useState } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 
-// interface CheeseAdderProps {
-//     cheeseData: Cheese | null;
-// }
-
 const CheeseAdder = () => {
 
         const nameRef = useRef<HTMLInputElement>(null);
@@ -55,7 +51,7 @@ const CheeseAdder = () => {
             if (descriptionRef.current !== null) {
                 cheese.Description = descriptionRef.current.value;
             }
-            if (imageRef.current !== null && imageRef.current.files) {
+            if (imageRef.current !== null && imageRef.current.files && imageRef.current.files[0]) {
                 const imageFile = imageRef.current.files[0];
                 console.log(imageFile);
                 cheese.Image = imageFile.name;  // Attach the file name
@@ -78,25 +74,29 @@ const CheeseAdder = () => {
 
 
             // Then upload the image file to store the image on the server.
-            if (imageRef.current === null || !imageRef.current.files) return;
+            if (imageRef.current === null || !imageRef.current.files) {
+                console.log("No image file selected")
+            }
 
-            const imageFile = imageRef.current.files[0]; // Get the actual image file
-            console.log("Selected image file:", imageFile);
+            if (imageRef.current !== null && imageRef.current.files && imageRef.current.files[0]) {
+                const imageFile = imageRef.current.files[0]; // Get the actual image file
+                console.log("Selected image file:", imageFile);
 
-            const formData = new FormData();
-            formData.append('imageFile', imageFile);
+                const formData = new FormData();
+                formData.append('imageFile', imageFile);
 
-            await axios.post('http://localhost:5009/api/Image/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            }).then((response) => {
-                console.log(response.data);
-            }).catch((error) => {
-                console.log(error);
-            });
+                await axios.post('http://localhost:5009/api/Image/upload', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then((response) => {
+                    console.log(response.data);
+                }).catch((error) => {
+                    console.log(error);
+                });
 
-            return (<Navigate to="/" />);
+                return (<Navigate to="/" />);
+            }
         }
 
         // The handleAddTag function will add a new tag to the tagList array when the user clicks the Add Tag button.
@@ -113,7 +113,7 @@ const CheeseAdder = () => {
                 <Text color={colorMode === 'dark' ? 'white' : 'black'} fontSize="2xl" fontWeight="bold"> Add a New
                                                                                                          Cheese </Text>
                 <div className={colorMode === 'dark' ? 'text-gray-50' : 'text-black'}>
-                    <form onSubmit={handleSubmit} encType='multipart/form-data'>
+                    <form className='cheese-form' onSubmit={handleSubmit} encType='multipart/form-data'>
                         <div className='input-group mb-3'>
                             <span className="input-group-text" id="inputGroup-sizing-default">Cheese Name</span>
                             <input
